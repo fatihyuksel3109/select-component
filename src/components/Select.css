@@ -78,6 +78,7 @@
 
 .options-list {
   max-height: 200px;
+  padding: 1em;
   overflow-y: auto;
 }
 
