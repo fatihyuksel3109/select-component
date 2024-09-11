@@ -1,8 +1,14 @@
-.select-container {
-  position: relative;
-  width: 40%;
-  font-family: Arial, sans-serif;
+@media only screen  and (min-width: 1024px){
+  .select-container {
+    position: relative;
+    width: 40%;
+    font-family: Arial, sans-serif;
+  } 
 }
+
+.select-container {
+  width: 90%;
+} 
 
 .select-input {
   display: flex;
