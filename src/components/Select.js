@@ -36,7 +36,7 @@ const Select = ({
 
   useEffect(() => {
     let filteredOptions = options.filter(option =>
-      renderOption(option).toLowerCase().includes(searchTerm.toLowerCase())
+      renderOption(option).includes(searchTerm.toLowerCase())
     );
     if (sortOptions) {
       filteredOptions.sort((a, b) =>
@@ -89,7 +89,9 @@ const Select = ({
       <div className="select-input" onClick={toggleSelect}>
         <div className="selected-options">
           {selected.length > 0 ? (
-            selected.map(option => renderSelectedOption(option))
+             selected.map(option => (
+              <span key={option.id}>{renderSelectedOption(option)}</span>
+            ))
           ) : (
             <span className="placeholder">{placeholder}</span>
           )}

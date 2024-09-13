@@ -1,7 +1,7 @@
 @media only screen  and (min-width: 1069px){
   .select-container {
     position: relative;
-    width: 40%;
+    width: 50%;
     font-family: Arial, sans-serif;
   } 
 }
@@ -98,7 +98,7 @@
 
 .options-list {
   max-height: 200px;
-  padding: 1em;
+  padding: 0.5em 1em 1em 0.5em;
   overflow-y: auto;
 }
 
@@ -131,4 +131,68 @@
 .disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/* Tablet ve üzeri cihazlarda tablonun genişliği */
+@media only screen and (min-width: 1069px) {
+  .table-container {
+    width: 60%;
+    font-family: Arial, sans-serif;
+  }
+}
+
+/* Mobil ve daha küçük ekranlarda tablonun genişliği */
+@media only screen and (max-width: 1068px) {
+  .table-container {
+    width: 100%;
+    font-family: Arial, sans-serif;
+  }
+}
+
+.table-container {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.table-container th, .table-container td {
+  padding: 12px;
+  border: 1px solid #d0d5dd;
+  text-align: left;
+}
+
+.table-container th {
+  background-color: #f3f4f6;
+  color: #333;
+  font-weight: bold;
+}
+
+.table-container td {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.table-container tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.table-container tr:hover {
+  background-color: #f3f4f6;
+}
+
+.table-container .user-photo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.table-container .user-email {
+  color: #667085;
+  font-size: 12px;
+}
+
+.table-container .check-icon {
+  color: #7f56d9;
 }

@@ -1,28 +1,32 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import { fetchUsers } from './api/api';
 import Select from './components/Select';
+import './App.css'; 
 
 function App() {
   const { data: users, isLoading, error } = useQuery({
     queryKey: ['users'],
-    queryFn: () => axios.get('https://jsonplaceholder.typicode.com/users').then(res => res.data)
+    queryFn: fetchUsers, 
   });
+  
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>An error occurred: {error.message}</div>;
+
+  if (isLoading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error">An error occurred: {error.message}</div>;
 
   return (
-    <div className="p-4 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Team Members</h1>
-      <Select
-        options={users}
-        placeholder="Select team members"
-        multiple={true}
-        renderOption={(user) => user.name}
-        onSelect={(selected) => console.log('Selected:', selected)}
-        variant="avatar"
-      />
+    <div className="app-container">
+      <div className="select-container">
+        <h1 className="title">Team Members</h1>
+        <Select
+          options={users}
+          placeholder="Select team members"
+          multiple={true}
+          renderOption={(user) => user.name}
+          variant="avatar"
+        />
+      </div>
     </div>
   );
 }
